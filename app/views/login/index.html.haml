@@ -1,0 +1,15 @@
+.title
+  %h1 Welcome to Team Manager
+
+.content
+  .login
+    = form_tag login_path do
+      .field
+        = label_tag :email
+        = text_field_tag :email, params[:email]
+      .field
+        = label_tag :password
+        = password_field_tag :password, params[:password]
+      .actions
+        = submit_tag "Login"
+
