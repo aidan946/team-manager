@@ -71,7 +71,9 @@ gem 'tailwindcss-rails', '~> 2.3'
 gem 'devise', '~> 4.9'
 
 gem 'haml-rails'
+gem 'html2haml'
 
 gem 'pry'
 
 gem 'htmlbeautifier'
+
