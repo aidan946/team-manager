@@ -16,5 +16,9 @@ Rails.application.routes.draw do
 
   get 'dashboard' => 'dashboard#index'
 
+  get 'settings' => 'settings#show'
+
+  resources :teams
+
   resources :users
 end
