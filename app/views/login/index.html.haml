@@ -1,4 +1,4 @@
-.title
+.text-xl
   %h1 Welcome to Team Manager
 
 .content
@@ -6,10 +6,10 @@
     = form_tag login_path do
       .field
         = label_tag :email
-        = text_field_tag :email, params[:email]
+        = text_field_tag :email, params[:email], class: "input input-bordered w-full max-w-xs"
       .field
         = label_tag :password
-        = password_field_tag :password, params[:password]
+        = password_field_tag :password, params[:password], class: "input input-bordered w-full max-w-xs"
       .actions
-        = submit_tag "Login"
+        = submit_tag "Login", class: "btn btn-primary"
 
