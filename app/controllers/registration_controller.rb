@@ -1,19 +1,8 @@
-class LoginController < ApplicationController
+class RegistrationController < ApplicationController
   skip_before_action :authenticate_user!
   layout 'login'
 
   def new; end
-
-  def login
-    user = User.where(email: params[:email]).take
-    if user&.valid_password?(params[:password])
-      sign_in user
-      redirect_to dashboard_path
-    else
-      flash[:error] = 'Invalid email or password'
-      redirect_to root_path
-    end
-  end
 
   def register; end
 
@@ -24,8 +13,6 @@ class LoginController < ApplicationController
 
     redirect_to root_path
   end
-
-  def reset_password; end
 
   def logout
     sign_out @current_user
