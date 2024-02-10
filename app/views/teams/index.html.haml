@@ -1,4 +1,11 @@
 %h1.text-xl Teams
 
-.add_team
-  = link_to "Add Team", new_team_path, class: "btn btn-primary"
+.flex
+  = link_to "Add Team", new_team_path, class: "btn btn-primary mr-4 ml-auto"
+
+.Teams
+  - @teams.each do |team|
+    .border.rounded-lg.border-gray-200.p-4.mt-4.max-w-fit.bg-base-200
+      = link_to team.name, team_path(team)
+      = link_to "Edit", edit_team_path(team), class: "btn btn-secondary ml-8"
+      = link_to "Delete", team_path(team), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-danger"
