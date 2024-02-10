@@ -20,5 +20,5 @@
           = password_field_tag :password, params[:confirm_password], class: 'input input-bordered', :placeholder => "confirm password", :required => "", :type => "password"
 
         .form-control.mt-6
-          %a.btn.btn-secondary{href: "/"} Back
-          = submit_tag "Register", class: "btn btn-primary mt-4"
+          = submit_tag "Register", class: "btn btn-primary"
+          %a.btn.btn-secondary.mt-4{href: "/"} Go Back

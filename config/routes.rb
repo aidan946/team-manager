@@ -11,9 +11,12 @@ Rails.application.routes.draw do
   # root "posts#index"
   root 'login#index'
   post 'login' => 'login#login'
+  get 'reset_password' => 'login#reset_password'
+  post 'reset_email' => 'login#reset_email'
+  get 'logout' => 'login#logout'
 
-  get 'register' => 'register#index'
-  post 'register' => 'register#register'
+  get 'register' => 'login#register'
+  post 'create_account' => 'login#create_account'
 
   get 'dashboard' => 'dashboard#index'
 
