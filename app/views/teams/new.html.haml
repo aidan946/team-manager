@@ -1,0 +1,26 @@
+%h1.text-xl Create a Team
+
+.hero.min-h-screen
+  .hero-content.flex-col.lg:flex-row-reverse
+    .card.w-full.max-w-sm.shadow-2xl.bg-base-200
+      = form_tag teams_path, class: 'card-body' do
+        .form-control
+          %label.label
+            %span.label-text Email
+          = text_field_tag :email, params[:email], class: 'input input-bordered', :placeholder => "email", :required => "", :type => "email"
+        .form-control
+          %label.label
+            %span.label-text Username
+          = text_field_tag :username, params[:username], class: 'input input-bordered', :placeholder => "username", :required => "", :type => "text"
+        .form-control
+          %label.label
+            %span.label-text Password
+          = password_field_tag :password, params[:password], class: 'input input-bordered', :placeholder => "password", :required => "", :type => "password"
+        .form-control
+          %label.label
+            %span.label-text Confirm Password
+          = password_field_tag :password, params[:confirm_password], class: 'input input-bordered', :placeholder => "confirm password", :required => "", :type => "password"
+
+        .form-control.mt-6
+          = submit_tag "Register", class: "btn btn-primary"
+          %a.btn.btn-secondary.mt-4{href: teams_path} Go Back
