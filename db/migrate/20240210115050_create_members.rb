@@ -10,5 +10,10 @@ class CreateMembers < ActiveRecord::Migration[7.1]
 
     add_foreign_key :members, :users, column: :user_id
     add_foreign_key :members, :teams, column: :team_id
+
+    add_index :members, :team_id
+    add_index :members, :user_id
+
+    add_column :teams, :members_count, :integer, default: 0
   end
 end

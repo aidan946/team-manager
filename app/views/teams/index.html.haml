@@ -1,7 +1,10 @@
-%h1.text-xl Teams
-
 .flex
+  %h1.text-xl.mr-auto.ml-4 Teams
   = link_to "Add Team", new_team_path, class: "btn btn-primary mr-4 ml-auto"
+
+.tabs.tabs-boxed.mt-8{role: "tablist", 'data-controller': "teams"}
+  %a.tab.tab-active{role: "tab"} My Teams
+  %a.tab{role: "tab", href: all_teams_teams_path} All Teams
 
 .Teams
   - @teams.each do |team|

@@ -20,6 +20,8 @@ ActiveRecord::Schema[7.1].define(version: 2024_02_10_115050) do
     t.string "role"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["team_id"], name: "index_members_on_team_id"
+    t.index ["user_id"], name: "index_members_on_user_id"
   end
 
   create_table "teams", force: :cascade do |t|
@@ -29,6 +31,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_02_10_115050) do
     t.integer "owner_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "members_count", default: 0
     t.index ["name"], name: "index_teams_on_name"
     t.index ["owner_id"], name: "index_teams_on_owner_id"
   end
