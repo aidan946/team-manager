@@ -7,3 +7,9 @@
   %a.tab.tab-active{role: "tab", href: all_teams_path} All Teams
 
 .Teams
+  - @teams.each do |team|
+    .border.rounded-lg.border-gray-200.p-4.mt-4.max-w-fit.bg-base-200
+      = link_to team.name, team_path(team)
+      - if team.owner == current_user
+        = link_to "Edit", edit_team_path(team), class: "btn btn-secondary ml-8"
+        = link_to "Delete", team_path(team), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-danger"

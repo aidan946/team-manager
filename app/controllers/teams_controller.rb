@@ -35,4 +35,10 @@ class TeamsController < ApplicationController
 
     redirect_to teams_path
   end
+
+  def all_teams
+    memberships = current_user.members
+    @teams = memberships.map(&:team)
+    @teams += Team.where(owner_id: current_user.id)
+  end
 end
