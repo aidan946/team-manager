@@ -5,6 +5,8 @@ class TeamsController < ApplicationController
 
   def show
     @team = Team.find(params[:id])
+    @posts = @team.posts
+    @new_post = Post.new(team_id: @team.id, user_id: current_user.id)
   end
 
   def edit

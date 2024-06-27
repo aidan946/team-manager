@@ -25,6 +25,8 @@ Rails.application.routes.draw do
 
   resources :teams
 
+  resources :posts
+
   get 'all_teams' => 'teams#all_teams'
 
   resources :users
