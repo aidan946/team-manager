@@ -30,6 +30,10 @@
   max-width: 100% !important;
 }
 
+trix-toolbar > .trix-button {
+  color: white !important;
+}
+
 .trix-content {
   color: black;
   background-color: white;
