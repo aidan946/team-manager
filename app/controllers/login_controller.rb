@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class LoginController < ApplicationController
   skip_before_action :authenticate_user!
   layout 'login'
@@ -5,7 +7,7 @@ class LoginController < ApplicationController
   def new; end
 
   def login
-    user = User.where(email: params[:email]).take
+    user = User.find_by(email: params[:email])
     if user&.valid_password?(params[:password])
       sign_in user
       redirect_to dashboard_path
